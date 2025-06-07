@@ -1,0 +1,196 @@
+/* 全站平滑滾動 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 共用樣式 */
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Hero 區塊 */
+#hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.parallax-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  z-index: 1;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+}
+
+.hero-overlay-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #000 100%);
+  z-index: 0;
+}
+
+/* Hero 區塊文字打字效果 */
+.typing {
+  font-size: 2.5rem;
+  border-right: 2px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 1.5s steps(20, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #fff }
+}
+
+
+/* 內容區塊（關於我、專長、證照、語言能力、聯絡我） */
+section#about,
+section#certificates,
+section#languages,
+section#contact,
+section#skills {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: transparent;
+  text-align: left;
+}
+
+section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #00bfff;
+  font-weight: bold;
+}
+
+section ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+section ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #eee;
+}
+
+/* 導覽列樣式 */
+.navbar-nav .nav-link {
+  padding: 10px 15px;
+  font-size: 1rem;
+}
+
+/* 返回頂部按鈕 */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 24px;
+  display: none;
+  z-index: 999;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+/* ============================
+   響應式設計 Responsive
+=============================== */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 22px;
+  }
+
+  section ul li {
+    font-size: 14px;
+  }
+
+  .navbar-nav .nav-link {
+    text-align: center;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  #backToTop {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+}
