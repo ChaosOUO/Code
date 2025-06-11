@@ -229,6 +229,26 @@ section ul li {
   transform: scale(1.1);
 }
 
+/* footer樣式 */
+.site-footer {
+  background-color: #121212; /* 深色背景 */
+  color: #f0f0f0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 0.9rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.site-footer a {
+  color: #66b2ff;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+
 /* ============================
    響應式設計 Responsive
 =============================== */
@@ -274,5 +294,12 @@ section ul li {
 
   .hero-content p {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .site-footer {
+    font-size: 0.85rem;
+    padding: 1.5rem 1rem;
   }
 }
