@@ -80,29 +80,30 @@ body {
 .hero-wrapper {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .parallax-img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
   z-index: -1;
 }
 
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;background-color: rgba(0, 0, 0, 0.4);
+ .hero-content {
+  color: white;
   text-align: center;
-  z-index: 1;
-  padding: 30px;
-  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* 提高文字可讀性 */
+  padding: 1.5rem;
+  border-radius: 1rem;
+  max-width: 90%;
 }
 
 .hero-content h1 {
@@ -233,7 +234,8 @@ section ul li {
 =============================== */
 @media (max-width: 768px) {
   .hero-content {
-    padding: 20px;
+    font-size: 1rem;
+    padding: 1rem;
   }
 
   .hero-content h1 {
